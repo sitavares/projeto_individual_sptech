@@ -34,9 +34,38 @@
 
 /*daqui para baixo é a estilização da parte main*/
 
+.banner{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-image: url(./img/call_of_duty_mw.jpg);
+    background-size: cover;
+    padding: 16px 100px;
+    height: 75vh;
+}
+
+.banner_frase{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    color: white;
+}
+
+.banner_frase p{
+    margin-bottom: 85px;
+    font-size: 20px;
+}
+
+.banner_frase h1{
+    margin-bottom: 40px;
+    color: #9BC848;
+}
+
 .valores{
-    background-color: blue;
-    height: 590px;
+    height: 300px;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -47,12 +76,48 @@
     background-color: white;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: 100%;
 }
 
-.valores_section02{
-    background-color: peru;
+.section01_esquerdo{
     display: flex;
-    justify-content: space-around;
-    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: 350px;
+    width: 30%;
+    background-color: #107c10;
+    color: white;
+}
+
+.section01_esquerdo img{
+    height: 200px;
+    width: 200px;
+}
+
+.section01_esquerdo p{
+    margin-top: 15px;
+}
+
+.section01_direito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: 350px;
+    width: 30%;
+    background-color: #107c10;
+    color: white;
+}
+
+.section01_direito img{
+    height: 200px;
+    width: 200px;
+}
+
+.section01_direito p{
+    margin-top: 15px;
 }
