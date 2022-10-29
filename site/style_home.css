@@ -11,12 +11,13 @@
 }
 
 .container_header{
+    background-color: whitesmoke;
     height: 100%;
-    padding: 0 50px;
-    background-color: blue;
+    padding: 3px 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 5px solid #107c10;
 }
 
 .container_nevegacao ul{
@@ -24,4 +25,34 @@
     display: flex;
     justify-content: space-between;
     width: 400px;
+}
+
+.container_header .logo img{
+    height: 55px;
+    width: 155px;
+}
+
+/*daqui para baixo é a estilização da parte main*/
+
+.valores{
+    background-color: blue;
+    height: 590px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.valores_section01{
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.valores_section02{
+    background-color: peru;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
 }
