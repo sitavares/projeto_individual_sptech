@@ -10,6 +10,10 @@
     border: none;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .container_header{
     background-color: whitesmoke;
     height: 100%;
@@ -18,6 +22,24 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 5px solid #107c10;
+}
+
+.container_nevegacao{
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    height: 30%;
+    width: 40%;
+}
+
+.outros{
+    text-decoration: none;
+    color: #107c10;
+}
+
+.agora{
+    color: #107c10;
+    text-decoration: underline;
 }
 
 .container_nevegacao ul{
@@ -40,7 +62,7 @@
     justify-content: flex-end;
     background-image: url(./img/call_of_duty_mw.jpg);
     background-size: cover;
-    padding: 16px 100px;
+    padding: 0 100px;
     height: 75vh;
 }
 
@@ -64,8 +86,24 @@
     color: #9BC848;
 }
 
+.divisao{
+    font-size: 20px;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.divisao p a{
+    text-decoration: none;
+    color: #107c10;
+}
+
 .valores{
-    height: 300px;
+    background-color: aqua;
+    height: 350px;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -73,22 +111,24 @@
 }
 
 .valores_section01{
-    background-color: white;
+    background-color: #107c10;
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
+    height: 100%;
+
 }
 
 .section01_esquerdo{
+    background-color: #107c10;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
-    height: 350px;
+    height: 100%;
     width: 30%;
-    background-color: #107c10;
     color: white;
 }
 
@@ -107,7 +147,7 @@
     align-items: center;
     flex-direction: column;
     text-align: center;
-    height: 350px;
+    height: 100%;
     width: 30%;
     background-color: #107c10;
     color: white;
@@ -120,4 +160,76 @@
 
 .section01_direito p{
     margin-top: 15px;
+}
+
+.games{
+    background-color: #f2f2f2;
+    width: 100%;
+    height: 140vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.games-titulo{
+    color: #107c10;
+}
+
+.games-recreacao{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.games-recreacao-texto{
+    width: 100%;
+    color: white;
+    background-color: #9BC848;
+    border-left: 2px solid #9BC848;
+    border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px;
+}
+
+.recreacao{
+    height: 300px;
+    width: 370px;
+    display: flex;
+}
+
+.games-competitivo{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.games-competitivo-texto{
+    color: white;
+    width: 100%;
+    background-color: #9BC848;
+    border-left: 2px solid #9BC848;
+    border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px;
+}
+
+.competitivo{
+    height: 300px;
+    width: 370px;
+    display: flex;
+}
+
+.rodape{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 200px;
+    width: 100%;
+    background-color: #107c10;
+}
+
+.contatos{
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
