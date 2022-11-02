@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./img/Xbox_one_icone.png" type="image/x-icon">
-    <link rel="stylesheet" href="style_cadastro.css">
+    <script src="funcoes.js"></script>
+    <link rel="stylesheet" href="./css/style_cadastro.css">
     <title>Cadastro</title>
 </head>
 <body>
@@ -17,26 +18,26 @@
             <div class="container_nevegacao">
                     <a class="outros" href="./index.html">Inicial</a>
                     <a class="agora" href="">Cadastro</a>
-                    <a class="outros" href="">Login</a>
+                    <a class="outros" href="./login.html">Login</a>
             </div>
         </div>
     </header>
     <div class="container">
         <div class="cadastro">
             <div class="input_grupo">
-                <label for="input_nome">Nome</label>
+                <label for="nome_input">Nome</label>
                 <input type="text" placeholder="Seu nome">
             </div>
             <div class="input_grupo">
-                <label for="input_email">E-mail</label>
+                <label for="email_input">E-mail</label>
                 <input type="email" placeholder="exemplo@exemplo.com">
             </div>
             <div class="input_grupo">
-                <label for="input_senha">Senha</label>
+                <label for="senha_input">Senha</label>
                 <input type="password" placeholder="no mínimo 8 caracteres">
             </div>
             <div class="input_grupo">
-                <label for="input_senha_confirm">Confirmar senha</label>
+                <label for="confirmacao_senha_input">Confirmar senha</label>
                 <input type="password" placeholder="Digite sua senha novamente">
             </div>
             <div class="cadastro_botao">
@@ -48,8 +49,6 @@
 
 <script>
     function cadastrar() {
-        aguardar();
-
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
         var nomeVar = nome_input.value;
@@ -88,10 +87,6 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                cardErro.style.display = "block";
-
-                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
                 setTimeout(() => {
                     window.location = "login.html";
                 }, "2000")
@@ -108,11 +103,6 @@
 
         return false;
     }
-
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
-
 </script>
 
 </html>
