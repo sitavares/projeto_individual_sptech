@@ -1,0 +1,107 @@
+/* font-family: 'Concert One', cursive;
+    font-family: 'Roboto', sans-serif; */
+
+    @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap%27');
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+        border: none;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    .container_header{
+        background-color: whitesmoke;
+        height: 100%;
+        padding: 3px 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 5px solid #107c10;
+    }
+    
+    .container_nevegacao{
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+        height: 30%;
+        width: 25%;
+    }
+    
+    .outros{
+        text-decoration: none;
+        color: #107c10;
+    }
+    
+    .agora{
+        color: #107c10;
+        text-decoration: underline;
+    }
+    
+    .container_nevegacao ul{
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        width: 400px;
+    }
+    
+    .container_header .logo img{
+        height: 55px;
+        width: 155px;
+    }
+
+    header{
+        height: 20%;
+    }
+
+    .container{
+        background-image: url(./img/video-games-1136046.jpg);
+        background-size: cover;
+        height: 90vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cadastro{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        width: 40%;
+        height: 70vh;
+    }
+
+    .input_grupo input{
+        margin-bottom: 30px;
+        padding: 10px;
+        border-bottom: 2px solid;
+        text-align: center;
+        outline: none;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .input_grupo {
+        width: 60%;
+    }
+
+    .cadastro_botao{
+        background-color: blue;
+        height: 40px;
+        width: 140px;
+    }
+
+    .botao_cadastrar{
+        color: white;
+        background-color: blue;
+        width: 100%;
+        height: 100%;
+        font-size: 20px;
+    }
