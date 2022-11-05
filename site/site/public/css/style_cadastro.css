@@ -99,6 +99,7 @@
     }
 
     .botao_cadastrar{
+        cursor: pointer;
         color: white;
         background-color: blue;
         width: 100%;

@@ -25,12 +25,12 @@
     <div class="container">
         <div class="cadastro">
             <div class="input_grupo">
-                <label for="email_input">E-mail</label>
-                <input type="email" placeholder="exemplo@exemplo.com">
+                <label for="input_email">E-mail</label>
+                <input id="input_email" type="email" placeholder="exemplo@exemplo.com">
             </div>
             <div class="input_grupo">
-                <label for="senha_input">Senha</label>
-                <input type="password" placeholder="no mínimo 8 caracteres">
+                <label for="input_senha">Senha</label>
+                <input id="input_senha" type="password" placeholder="no mínimo 8 caracteres">
             </div>
             <div class="cadastro_botao">
                 <button onclick="entrar()" class="botao_cadastrar">Entrar</button>
@@ -41,10 +41,8 @@
 
 <script>
     function entrar() {
-        aguardar();
-
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
+        var emailVar = input_email.value;
+        var senhaVar = input_senha.value;
 
         if (emailVar == "" || senhaVar == "") {
             alert(`Preencha todos os campos`)
@@ -76,11 +74,11 @@
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id;
-                    sessionStorage.CPF = json.cpf;
 
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
-                    }, 1000); // apenas para exibir o loading
+                        alert(`Derecionando para o dashboard...`)
+                        window.location = "./dashboard/dashboard.html";
+                    },); // apenas para exibir o loading
 
                 });
 

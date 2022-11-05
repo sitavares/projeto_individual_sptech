@@ -25,51 +25,93 @@
     <div class="container">
         <div class="cadastro">
             <div class="input_grupo">
-                <label for="nome_input">Nome</label>
-                <input type="text" placeholder="Seu nome">
+                <label for="input_nome">Nome</label>
+                <input onkeyup="verificar_nome()" type="text" id="input_nome" placeholder="Seu nome">
             </div>
             <div class="input_grupo">
                 <label for="email_input">E-mail</label>
-                <input type="email" placeholder="exemplo@exemplo.com">
+                <input onkeyup="verificar_email()" type="email" id="input_email" placeholder="exemplo@exemplo.com">
             </div>
             <div class="input_grupo">
                 <label for="senha_input">Senha</label>
-                <input type="password" placeholder="no mínimo 8 caracteres">
+                <input onkeyup="verificar_senha()" type="password" id="input_senha" placeholder="no mínimo 8 caracteres">
             </div>
             <div class="input_grupo">
                 <label for="confirmacao_senha_input">Confirmar senha</label>
-                <input type="password" placeholder="Digite sua senha novamente">
+                <input onkeyup="confirmar_senha()" type="password" id="input_senha_confirmacao" placeholder="Digite sua senha novamente">
             </div>
             <div class="cadastro_botao">
-                <button onclick="cadastrar()" class="botao_cadastrar">Cadastrar</button>
+                <button onclick="cadastrar()"class="botao_cadastrar">Cadastrar</button>
             </div>
         </div>
     </div>
 </body>
 
 <script>
+
+function verificar_nome() {
+        var nomeVar = input_nome.value;
+        if (nomeVar == "") {
+            document.getElementById("input_nome").style.borderColor = "black"
+        } else if (nomeVar.length >= 3) {
+            document.getElementById("input_nome").style.borderColor = "green"
+        } else {document.getElementById("input_nome").style.borderColor = "red"}
+    }
+
+    function verificar_email(){
+        var emailVar = input_email.value;
+
+        if (emailVar == "") {
+            document.getElementById("input_email").style.borderColor = "black"
+        } else if (emailVar.indexOf("@") > -1 && (emailVar.indexOf("sptech.school") > -1 || emailVar.indexOf(".com") > -1 || emailVar.indexOf(".com.br") > -1)) {
+            document.getElementById("input_email").style.borderColor = "green";
+        } else {document.getElementById("input_email").style.borderColor = "red";}
+    }
+
+    function verificar_senha(){
+        var senhaVar = input_senha.value;
+        confirmar_senha()
+
+        if (senhaVar == "") {
+            document.getElementById("input_senha").style.borderColor = "black";
+        } else if (senhaVar.length < 8) {
+            document.getElementById("input_senha").style.borderColor = "red";
+        } else {document.getElementById("input_senha").style.borderColor = "green";}
+    }
+
+    function confirmar_senha() {
+        var senhaVar = input_senha.value;
+        var senha_confirm = input_senha_confirmacao.value;
+
+        if (senha_confirm == "") {
+            document.getElementById("input_senha_confirmacao").style.borderColor = "black";
+        } else if (senhaVar == senha_confirm) {
+            document.getElementById("input_senha_confirmacao").style.borderColor = "green";
+        } else {document.getElementById("input_senha_confirmacao").style.borderColor = "red";}
+    }
+
+
     function cadastrar() {
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
-        var nomeVar = nome_input.value;
-        var cpfVar = cpf_input.value;
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
-        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        var  nomeVar = input_nome.value;
+        var  emailVar = input_email.value;
+        var  senhaVar = input_senha.value;
+        var  senha_confirm = input_senha_confirmacao.value;
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || cpfVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-
-            finalizarAguardar();
-            return false;
-        }
-        else {
-            setInterval(sumirMensagem, 5000)
-        }
-
-        // Enviando o valor da nova input
-        fetch("/usuarios/cadastrar", {
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || senha_confirm == "") {
+            alert("Preencha todos os campos");
+        } else if (nomeVar.length <= 3) {
+            alert("O nome deve ter mais de 2 caracteres");
+        }  else if (emailVar.indexOf("@") == -1 || (emailVar.indexOf("sptech.school") == -1 && emailVar.indexOf(".com") == -1 && emailVar.indexOf(".com.br") == -1)) {
+            alert("E-mail inválido!");
+        } else if (senhaVar.length < 8) {
+            alert("Sua senha deve ter no mínimo 8 caracteres");
+        } else if (senhaVar != senha_confirm) {
+            alert(`A confirmação de senha está incorreta`);
+        } else {
+            // Enviando o valor da nova input
+            fetch("/usuarios/cadastrar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -78,7 +120,6 @@
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
                 nomeServer: nomeVar,
-                cpfServer: cpfVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar
             })
@@ -89,20 +130,23 @@
             if (resposta.ok) {
                 setTimeout(() => {
                     window.location = "login.html";
-                }, "2000")
+                })
                 
-                limparFormulario();
-                finalizarAguardar();
+                
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
+            
         });
 
         return false;
-    }
+        }
+
+        
+        
+ }
 </script>
 
 </html>
