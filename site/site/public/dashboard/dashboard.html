@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo_dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="shortcut icon" href="./assets/Xbox_one_icone.png" type="image/x-icon">
+    <title>Xbox - Dashboard</title>
+</head>
+
+<body>
+    <div class="menu-dashboard">
+        <div class="logo-luminar">
+            <img src="./assets/xbox-logo-2.png" alt="Logo Luminar" width="150px" height="55px"/>
+        </div>
+        <div class="principal-menu">
+            <div class="perfil-item-menu">
+                Bem vindo <span id=""></span>!
+            </div>
+        </div>
+        <div class="importante-menu">
+            <div class="sair-item-menu">
+                <a href="../index.html">
+                    <img src="./assets/sair.png" alt="Item Sair do menu" width="25px">
+                    <p>Sair</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="dashboards">
+        <div class="graficos">
+            <div class="div_chart01">
+              <div class="chart01">
+              <canvas id="myChart1"></canvas>
+              </div>
+            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+      const labels = [
+    'RPG',
+    'FPS',
+    'Ação e aventura',
+    'Corrida'
+  ];
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'QUANTIDADE DE SELEÇÕES',
+      backgroundColor: 'green',
+      borderColor: 'black',
+      data: [500, 500, 480, 700],
+    },
+  ]
+  };
+
+  const config1 = {
+    type: 'bar',
+    data: data,
+    options: {}
+  };
+
+  const myChart = new Chart(
+    document.getElementById('myChart1'),
+    config1
+  );
+</script>
+
+</html>
