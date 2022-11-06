@@ -18,7 +18,7 @@
         </div>
         <div class="principal-menu">
             <div class="perfil-item-menu">
-                Bem vindo <span id=""></span>!
+                Bem vindo <span id="b_usuario"></span>!
             </div>
         </div>
         <div class="importante-menu">
@@ -44,6 +44,11 @@
 </body>
 
 <script>
+b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+
+
+
       const labels = [
     'RPG',
     'FPS',

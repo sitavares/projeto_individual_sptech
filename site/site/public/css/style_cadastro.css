@@ -75,7 +75,7 @@
         align-items: center;
         background-color: white;
         width: 40%;
-        height: 70vh;
+        height: 80vh;
     }
 
     .input_grupo input{
@@ -105,4 +105,15 @@
         width: 100%;
         height: 100%;
         font-size: 20px;
+    }
+
+    .select_grupo{
+        width: 60%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    .select_grupo select{
+        border: 2px solid black;
     }

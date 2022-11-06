@@ -40,6 +40,19 @@
                 <label for="confirmacao_senha_input">Confirmar senha</label>
                 <input onkeyup="confirmar_senha()" type="password" id="input_senha_confirmacao" placeholder="Digite sua senha novamente">
             </div>
+            <div class="select_grupo">
+                Estilo de jogo favorito: <select name="" id="select_estilo">
+                    <option value="">SELECIONE</option>
+                    <option value="1">RPG</option>
+                    <option value="2">FPS</option>
+                    <option value="3">Ação e Aventura</option>
+                    <option value="4">Corrida</option>
+                    <option value="5">Esportes</option>
+                    <option value="6">Terror</option>
+                </select>
+            </div>
+            <div>
+            </div>
             <div class="cadastro_botao">
                 <button onclick="cadastrar()"class="botao_cadastrar">Cadastrar</button>
             </div>
@@ -98,8 +111,9 @@ function verificar_nome() {
         var  emailVar = input_email.value;
         var  senhaVar = input_senha.value;
         var  senha_confirm = input_senha_confirmacao.value;
+        var  estiloVar = select_estilo.value;
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || senha_confirm == "") {
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || senha_confirm == "" || estiloVar == "") {
             alert("Preencha todos os campos");
         } else if (nomeVar.length <= 3) {
             alert("O nome deve ter mais de 2 caracteres");
@@ -121,7 +135,8 @@ function verificar_nome() {
                 // Agora vá para o arquivo routes/usuario.js
                 nomeServer: nomeVar,
                 emailServer: emailVar,
-                senhaServer: senhaVar
+                senhaServer: senhaVar,
+                estiloServer: estiloVar
             })
         }).then(function (resposta) {
 
