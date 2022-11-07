@@ -32,11 +32,12 @@
     </div>
     <div class="dashboards">
         <div class="graficos">
-            <div class="div_chart01">
-              <div class="chart01">
-              <canvas id="myChart1"></canvas>
-              </div>
-            </div>
+            <div id="rpg"></div>
+            <div id="fps"></div>
+            <div id="av"></div>
+            <div id="corrida"></div>
+            <div id="esportes"></div>
+            <div id="terror"></div>
                 </div>
             </div>
         </div>
@@ -48,35 +49,6 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
 
 
-
-      const labels = [
-    'RPG',
-    'FPS',
-    'Ação e aventura',
-    'Corrida'
-  ];
-
-  const data = {
-    labels: labels,
-    datasets: [{
-      label: 'QUANTIDADE DE SELEÇÕES',
-      backgroundColor: 'green',
-      borderColor: 'black',
-      data: [500, 500, 480, 700],
-    },
-  ]
-  };
-
-  const config1 = {
-    type: 'bar',
-    data: data,
-    options: {}
-  };
-
-  const myChart = new Chart(
-    document.getElementById('myChart1'),
-    config1
-  );
 </script>
 
 </html>

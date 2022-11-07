@@ -6,6 +6,13 @@ idEstiloFav int primary key auto_increment,
 nome VARCHAR(45)
 );
 
+INSERT INTO estiloFav VALUES
+(null, "RPG"),
+(null, "FPS"),
+(null, "Ação e aventura"),
+(null, "Corrida"),
+(null, "Esportes"),
+(null, "Terror");
 
 CREATE TABLE usuario (
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -15,15 +22,19 @@ CREATE TABLE usuario (
     fkEstiloFav int, foreign key(fkEstiloFav) references estiloFav(idEstiloFav)
 );
 
-SELECT COUNT(id) FROM usuario WHERE fkEstiloFav = 2;
+SELECT COUNT(id) FROM usuario WHERE fkEstiloFav = 1;
 
-INSERT INTO estiloFav VALUES
-(null, "RPG"),
-(null, "FPS"),
-(null, "Ação e aventura"),
-(null, "Corrida"),
-(null, "Esportes"),
-(null, "Terror");
+CREATE TABLE Endereco (
+idEndereco INT auto_increment,
+rua VARCHAR(45),
+numero INT,
+bairro VARCHAR(45),
+cidade VARCHAR(45),
+estado CHAR(2),
+cep VARCHAR(9),
+fkUsuario INT, foreign key(fkUsuario)references usuario(id),
+primary key(idEndereco, fkUsuario)
+);
 
 SELECT * FROM estiloFav;
 SELECT * FROM usuario;
