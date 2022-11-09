@@ -26,6 +26,7 @@ function cadastrar(nome, email, senha, estilo) {
     //  e na ordem de inserção dos dados.
     var instrucao = `
         INSERT INTO usuario (nome, email, senha, fkEstiloFav) VALUES ('${nome}', '${email}', '${senha}', ${Number(estilo)});
+        
     `;
     // para inserir os dados e a fk na tabela posso colocar o insert abaixo junto com a instrucao de cadastro
     // INSERT INTO endereco (rua, numero, bairro, cidade, estado, cep, fkUsuario) VALUES('Rua 1', 135, 'bairro 1', 'São Paulo', 'SP', '03924-280', (SELECT max(id) FROM usuario));
