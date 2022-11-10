@@ -25,17 +25,34 @@ function cadastrar(nome, email, senha, estilo) {
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO usuario (nome, email, senha, fkEstiloFav) VALUES ('${nome}', '${email}', '${senha}', ${Number(estilo)});
-        
+        INSERT INTO usuario (nome, email, senha, fkEstiloFav) VALUES ('${nome}', '${email}', '${senha}', ${Number(estilo)})
     `;
     // para inserir os dados e a fk na tabela posso colocar o insert abaixo junto com a instrucao de cadastro
-    // INSERT INTO endereco (rua, numero, bairro, cidade, estado, cep, fkUsuario) VALUES('Rua 1', 135, 'bairro 1', 'São Paulo', 'SP', '03924-280', (SELECT max(id) FROM usuario));
+    
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
+
+function cadastrarE(num, cep) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", num, cep);
+    
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    var instrucao = `
+    INSERT INTO Endereco (numero, cep, fkUsuario) VALUES(${Number(num)}, '${cep}', (SELECT max(id) FROM usuario))
+    `;
+    // para inserir os dados e a fk na tabela posso colocar o insert abaixo junto com a instrucao de cadastro
+    
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+// `INSERT INTO Endereco (numero, cep, fkUsuario) VALUES(${Number(num)}, '${cep}', (SELECT max(id) FROM usuario))`
+
 module.exports = {
     entrar,
     cadastrar,
+    cadastrarE,
     listar,
 };

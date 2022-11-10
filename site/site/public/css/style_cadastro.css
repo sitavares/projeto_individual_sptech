@@ -75,7 +75,21 @@
         align-items: center;
         background-color: white;
         width: 40%;
-        height: 80vh;
+        height: 65vh;
+    }
+
+    .inputs_section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cadastro_section{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
 
     .input_grupo input{
@@ -89,7 +103,7 @@
     }
 
     .input_grupo {
-        width: 60%;
+        width: 80%;
     }
 
     .cadastro_botao{

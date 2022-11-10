@@ -26,7 +26,7 @@
         border-right: 4px solid green;
         background-color: white;
         height: 100%;
-        width: 25%;
+        width: 20%;
         padding: 2% 4%;
         font-family: 'Roboto', sans-serif;
         color: #FAF9FF;
@@ -85,39 +85,16 @@
     .importante-menu a p:hover{
         font-weight: bold;
     }
-    .select{
-       margin: 10%;
-       color: #000235;
-       border: none;
-       border-radius: 5px;
-       background-color:#8181D7
-    }
 
     .dashboards{
         width: 80%;
         height: 100%;
     }
- 
-
-
-     .div_status_sala{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        width: 1000px;
-        height: 60px;
-        background-color: #FAF9FF;
-        border-radius: 20px;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 700;
-        font-size: 30px;
-        color: #000235;
-     }
 
     .graficos{
         height: 100%;
         display: flex;
+        justify-content: center;
         flex-direction: column;
         align-items: center;
     }

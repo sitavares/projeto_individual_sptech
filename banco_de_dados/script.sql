@@ -22,28 +22,23 @@ CREATE TABLE usuario (
     fkEstiloFav int, foreign key(fkEstiloFav) references estiloFav(idEstiloFav)
 );
 
-SELECT COUNT(id) FROM usuario WHERE fkEstiloFav = 1;
+
 
 CREATE TABLE Endereco (
-idEndereco INT auto_increment PRIMARY KEY,
-rua VARCHAR(45),
+idEndereco INT auto_increment,
 numero INT,
-bairro VARCHAR(45),
-cidade VARCHAR(45),
-estado CHAR(2),
 cep VARCHAR(9),
-fkUsuario INT, foreign key(fkUsuario)references usuario(id)
+fkUsuario INT, foreign key(fkUsuario)references usuario(id),
+PRIMARY KEY(idEndereco, fkUsuario)
 );
 
-INSERT INTO endereco (rua, numero, bairro, cidade, estado, cep, fkUsuario) VALUES
-('Rua 1', 135, 'bairro 1', 'São Paulo', 'SP', '03924-280', (SELECT max(id) FROM usuario));
+INSERT INTO endereco (numero, cep, fkUsuario) VALUES
+(135, '03924-280',(SELECT max(id) FROM usuario));
 
 SELECT * FROM estiloFav;
 SELECT * FROM usuario;
 
 
 select e.nome, 
-count(u.id) as quantidade
+count(u.id) as quantidadeDeSelecoes
 from estiloFav e join usuario u on fkEstiloFav = idEstiloFav group by e.nome; 
-
-SELECT count(*) FROM usuario WHERE fkEstiloFav = 2;
