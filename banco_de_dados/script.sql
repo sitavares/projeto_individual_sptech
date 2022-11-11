@@ -22,23 +22,20 @@ CREATE TABLE usuario (
     fkEstiloFav int, foreign key(fkEstiloFav) references estiloFav(idEstiloFav)
 );
 
-
-
 CREATE TABLE Endereco (
-idEndereco INT auto_increment,
+idEndereco INT auto_increment primary key,
 numero INT,
 cep VARCHAR(9),
-fkUsuario INT, foreign key(fkUsuario)references usuario(id),
-PRIMARY KEY(idEndereco, fkUsuario)
+fkUsuario INT, foreign key(fkUsuario)references usuario(id)
 );
 
-INSERT INTO endereco (numero, cep, fkUsuario) VALUES
-(135, '03924-280',(SELECT max(id) FROM usuario));
 
 SELECT * FROM estiloFav;
 SELECT * FROM usuario;
+SELECT * FROM endereco;
 
 
+-- select feito para fazer a consulta na função do node para plotar o gráfico com chart js
 select e.nome, 
 count(u.id) as quantidadeDeSelecoes
 from estiloFav e join usuario u on fkEstiloFav = idEstiloFav group by e.nome; 
