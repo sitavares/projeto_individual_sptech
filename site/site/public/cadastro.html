@@ -32,11 +32,11 @@
                     </div>
                     <div class="input_grupo">
                         <label for="input_num">Número</label>
-                        <input onkeyup="" type="number" id="input_num" placeholder="Número da residência">
+                        <input onkeyup="verificar_num()" type="number" id="input_num" placeholder="Número da residência">
                     </div>
                     <div class="input_grupo">
-                        <label for="input_senha">CEP</label>
-                        <input onkeyup="" type="text" id="input_cep" placeholder="CEP">
+                        <label for="input_cep">CEP</label>
+                        <input onkeyup="verificar_cep()" type="text" id="input_cep" placeholder="CEP">
                     </div>
                 </div>
                 <div class="cadastro_section">
@@ -83,6 +83,25 @@ function verificar_nome() {
         } else if (nomeVar.length >= 3) {
             document.getElementById("input_nome").style.borderColor = "green"
         } else {document.getElementById("input_nome").style.borderColor = "red"}
+    }
+
+    function verificar_cep() {
+        var cepVar = input_cep.value;
+        if (cepVar == "") {
+            document.getElementById("input_cep").style.borderColor = "black";
+        } else if (cepVar.indexOf('-') > -1 && cepVar.length == 9) {
+            document.getElementById("input_cep").style.borderColor = "green";
+        } else {document.getElementById("input_cep").style.borderColor = "red";}
+    }
+
+    function verificar_num() {
+        var num_Var = input_num.value;
+
+        if (num_Var == "") {
+            document.getElementById("input_num").style.borderColor = "black";
+        } else if (num_eVar.length > 1) {
+            document.getElementById("input_num").style.borderColor = "green";
+        } else {document.getElementById("input_num").style.borderColor = "red";}
     }
 
     function verificar_email(){
