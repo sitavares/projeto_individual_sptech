@@ -12,7 +12,9 @@ INSERT INTO estiloFav VALUES
 (null, "Ação e aventura"),
 (null, "Corrida"),
 (null, "Esportes"),
-(null, "Terror");
+(null, "Terror"),
+(null, "Plataforma"),
+(null, "Arcade");
 
 CREATE TABLE usuario (
 	id INT PRIMARY KEY AUTO_INCREMENT,
