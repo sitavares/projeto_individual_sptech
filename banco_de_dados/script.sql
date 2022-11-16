@@ -37,7 +37,11 @@ SELECT * FROM usuario;
 SELECT * FROM endereco;
 
 
+
 -- select feito para fazer a consulta na função do node para plotar o gráfico com chart js
 select e.nome, 
 count(u.id) as quantidadeDeSelecoes
 from estiloFav e join usuario u on fkEstiloFav = idEstiloFav group by e.nome; 
+
+-- criptografia desejável
+SELECT aes_encrypt('senhaSegura', 'chaveSegura');
