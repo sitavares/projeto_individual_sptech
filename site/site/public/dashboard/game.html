@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="shortcut icon" href="./assets/Xbox_one_icone.png" type="image/x-icon">
+    <link rel="stylesheet" href="style_quiz.css">
+    <title>Xbox - Quiz</title>
+</head>
+
+<body>
+    <div class="menu-dashboard">
+        <div class="logo-luminar">
+            <img src="./assets/xbox-logo-2.png" alt="Logo Luminar" width="150px" height="55px"/>
+        </div>
+        <div class="principal-menu">
+            <div class="perfil-item-menu">
+                Bem vindo <span id="b_usuario"></span>!
+            </div>
+        </div>
+        <div class="importante-menu">
+            <div class="sair-item-menu">
+                <a href="../index.html">
+                    <img src="./assets/sair.png" alt="Item Sair do menu" width="25px">
+                    <p>Sair</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="principal">
+        <div class="principal_quiz">
+            
+        </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+
+
+</script>
+
+</html>
