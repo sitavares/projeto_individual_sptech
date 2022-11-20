@@ -14,8 +14,6 @@ html {
     scroll-behavior: smooth;
 }
 
-
-
 .container_header{
     background-color: whitesmoke;
     height: 100%;
@@ -31,7 +29,7 @@ html {
     justify-content: space-between;
     font-size: 18px;
     height: 30%;
-    width: 40%;
+    width: 50%;
 }
 
 .outros{

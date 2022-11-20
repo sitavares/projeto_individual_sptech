@@ -37,7 +37,6 @@ SELECT * FROM usuario;
 SELECT * FROM endereco;
 
 
-
 -- select feito para fazer a consulta na função do node para plotar o gráfico com chart js
 select e.nome, 
 count(u.id) as quantidadeDeSelecoes

@@ -19,7 +19,8 @@
                     <a class="outros" href="#games">Mais jogados</a>
                     <a class="outros" href="#rodape">Contato</a>
                     | 
-                    <a class="agora" href="">Inicial</a>
+                    <a class="agora" href="">Home</a>
+                    <a class="outros" href="simulador.html">Simulador</a>
                     <a class="outros" href="cadastro.html">Cadastro</a>
                     <a class="outros" href="login.html">Login</a>
             </div>
@@ -34,7 +35,7 @@
         </div>
         </div>
         <div class="divisao">
-            <p>Fique por dentro de todas as novidades e tendencias dos jogos no <a href=""> Mundo Xbox!</a></p>
+            <p>Quer saber o quanto você é bom em jogos competitivos? <a href="./simulador.html"> Simule aqui!</a></p>
         </div>
         <div class="valores" id="valores">
             <div class="valores_section01">
@@ -121,3 +122,37 @@
     </footer>
 </body>
 </html>
+
+
+<script>
+
+var contador = 0;
+
+    function carrossel() {
+        while (contador <= 3) {
+            
+            if (contador == 1) {
+                setTimeout(() => {
+                    carrossel_img.src = "./img/carrosel/hallo.jpg";
+                }, 1500);
+            }
+
+            if (contador == 2) {
+                setTimeout(() => {
+                    carrossel_img.src = "./img/carrosel/ryse-son-of-rome-game-xbox-one-pc.jpg";
+                }, 1500);
+            }
+
+            if (contador == 3) {
+                setTimeout(() => {
+                    carrossel_img.src = "./img/carrosel/sea_of_thieves.jpg";
+                    contador = 0;
+                }, 1500);
+            }
+
+            contador++
+        }
+    }
+
+    setInterval(() => carrossel, 1500);
+</script>

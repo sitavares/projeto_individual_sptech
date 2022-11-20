@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/Xbox_one_icone.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style_simulador.css">
+    <title>Simulador</title>
+</head>
+<body>
+    <header>
+        <div class="container_header">
+            <div class="logo">
+                <img src="./img/xbox-logo-2.png" alt="logo do xbox">
+            </div>
+            <div class="container_nevegacao">
+                    <a class="outros" href="./index.html">Home</a>
+                    <a class="agora" href="./cadastro.html">Simulador</a>
+                    <a class="outros" href="./cadastro.html">Cadastro</a>
+                    <a class="outros" href="./login.html">Login</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="cadastro">
+                <div class="cadastro_section">
+                    <div class="input_grupo">
+                        <label for="input_n_baixas">Número de Eliminações</label>
+                        <input type="number" id="input_n_baixas" placeholder="Eliminações por partida">
+                    </div>
+                    <div class="input_grupo">
+                        <label for="input_n_mortes">Número de Mortes</label>
+                        <input type="number" id="input_n_mortes" placeholder="Mortes por partida">
+                    </div>
+                    <div class="input_grupo">
+                        <label for="input_senha">Partidas Vencidas</label>
+                        <input type="number" id="input_partidas_v" placeholder="Número de partidas vencidas">
+                    </div>
+                    <div class="input_grupo">
+                        <label for="input_senha">Partidas Perdidas</label>
+                        <input type="number" id="input_partidas_p" placeholder="Número de partidas perdidas">
+                    </div>
+                </div>
+            <div>
+            </div>
+            <div class="cadastro_botao">
+                <button onclick="simular()"class="botao_cadastrar">Fui bem?</button>
+            </div>
+        </div>
+        <div class="estrelas_e_mensagem" id="estrelas_e_mensagem">
+            <div class="div_mensagem" id="div_mensagem"></div>
+            <div class="estrelas" id="div_estrela">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function simular() {
+        const qtd_baixas = Number(input_n_baixas.value);
+        const qtd_mortes = Number(input_n_mortes.value);
+        const qtd_partidas_vencidas = Number(input_partidas_v.value);
+        const qtd_partidas_perdidas = Number(input_partidas_p.value);
+
+        if (qtd_baixas >= 0 && qtd_mortes >= 0 && qtd_partidas_vencidas >= 0 && qtd_partidas_perdidas >= 0) {
+            document.getElementById("estrelas_e_mensagem").style.backgroundColor = "white"
+            div_mensagem.innerHTML = ``
+            div_estrela.innerHTML = ``
+            var kd = qtd_baixas/qtd_mortes;
+
+        var vd = qtd_partidas_vencidas/qtd_partidas_perdidas;
+
+        var limite = 0;
+        if (kd > 1 && vd < 1) {
+            limite = 2;
+            div_mensagem.innerHTML = `Você joga bem, mas precisa trabalhar em equipe!<br><br> Jogador 3 Estrelas`
+        } else if (kd < 1 && vd > 1) {
+            div_mensagem.innerHTML = `Você joga bem em equipe, mas precisa práticar mais!<br> <br> Jogador 2 estrelas`
+            limite = 1;
+        } else if (kd > 1 && vd > 1) {
+            div_mensagem.innerHTML = `Parabéns você joga o fino do game!<br><br> Jogador 5 estrelas`
+            limite = 4;
+        } else if (kd > 1 && vd > 0.50) {
+            div_mensagem.innerHTML = `Seu time precisa melhorar!<br><br>Jogador 4 estrelas`
+            limite = 3;
+        } else if (kd < 1 && vd < 1) {
+            div_mensagem.innerHTML = `Acho que você deveria jogar outra coisa!<br><br>Jogador 1 estrela`
+            limite = 0;
+        } else {
+            div_mensagem.innerHTML = `Você é um jogador mediano!<br><br>Jogador 3 estrelas`
+            limite = 2;
+        }
+
+
+        for (let contador = 0; contador <= limite; contador++) {
+            
+            div_estrela.innerHTML += `<img src="./img/estrela.png" alt="" style="width: 30px ; height: 30px;">`
+        }
+        } else {
+            alert(`Para de graça e digita os valores corretos! 😐`)
+        }
+    }
+</script>
