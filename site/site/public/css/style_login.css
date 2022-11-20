@@ -17,7 +17,7 @@
     .container_header{
         background-color: whitesmoke;
         height: 100%;
-        padding: 3px 80px;
+        padding: 3px 100px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -26,10 +26,10 @@
     
     .container_nevegacao{
         display: flex;
-        justify-content: space-between;
-        font-size: 18px;
-        height: 30%;
-        width: 25%;
+    justify-content: space-between;
+    font-size: 18px;
+    height: 30%;
+    width: 27%;
     }
     
     .outros{
@@ -59,8 +59,9 @@
     }
 
     .container{
-        background-image: url(../img/video-games-1136046.jpg);
+        background-image: url(../img/login.jpg);
         background-size: cover;
+        background-position-y: -110px;
         height: 89.3vh;
         width: 100%;
         display: flex;
@@ -69,6 +70,7 @@
     }
 
     .cadastro{
+        margin-right: 600px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -93,7 +95,7 @@
     }
 
     .cadastro_botao{
-        background-color: blue;
+        background-color: #107c10;
         margin-top: 50px;
         height: 40px;
         width: 140px;
@@ -101,7 +103,7 @@
 
     .botao_cadastrar{
         color: white;
-        background-color: blue;
+        background-color: #107c10;
         width: 100%;
         height: 100%;
         font-size: 20px;
