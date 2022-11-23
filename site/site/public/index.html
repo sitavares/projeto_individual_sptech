@@ -108,10 +108,14 @@
                 </div>
             </div>
         </div>
+        <div class="game_div">
+            <div class="game-titulo"><h1>Gosta de jogos retrô? Então aperta o play e divirta-se!</h1></div>
+            <div class="game"><iframe webkitallowfullscreen="true" mozallowfullscreen="true" msallowfullscreen="true" src="https://v6p9d9t4.ssl.hwcdn.net/html/4487774/index.html" frameborder="0" allowfullscreen="true" id="game_drop" allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad; gyroscope; accelerometer; xr; cross-origin-isolated" scrolling="no" allowtransparency="true"></iframe></div>
+        </div>
     </main>
     <footer>
         <div id="rodape" class="rodape">
-            <div><p>Feito para fins educacionais por Silvio Tavares aluno SPTECH 🤍</p></div>
+            <div><p>Feito para fins educacionais por Silvio Tavares aluno SPTECH 💚</p></div>
             <div class="contatos"><ul>
                 <h3>Contatos</h3>
                 <li>E-mail: silvio.tavares@sptech.school</li>
@@ -122,37 +126,3 @@
     </footer>
 </body>
 </html>
-
-
-<script>
-
-var contador = 0;
-
-    function carrossel() {
-        while (contador <= 3) {
-            
-            if (contador == 1) {
-                setTimeout(() => {
-                    carrossel_img.src = "./img/carrosel/hallo.jpg";
-                }, 1500);
-            }
-
-            if (contador == 2) {
-                setTimeout(() => {
-                    carrossel_img.src = "./img/carrosel/ryse-son-of-rome-game-xbox-one-pc.jpg";
-                }, 1500);
-            }
-
-            if (contador == 3) {
-                setTimeout(() => {
-                    carrossel_img.src = "./img/carrosel/sea_of_thieves.jpg";
-                    contador = 0;
-                }, 1500);
-            }
-
-            contador++
-        }
-    }
-
-    setInterval(() => carrossel, 1500);
-</script>
