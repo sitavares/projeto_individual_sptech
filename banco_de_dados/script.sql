@@ -14,7 +14,8 @@ INSERT INTO estiloFav VALUES
 (null, "Esportes"),
 (null, "Terror"),
 (null, "Plataforma"),
-(null, "Arcade");
+(null, "Arcade"),
+(null, 'Estratégia');
 
 CREATE TABLE usuario (
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -40,7 +41,11 @@ SELECT * FROM endereco;
 -- select feito para fazer a consulta na função do node para plotar o gráfico com chart js
 select e.nome, 
 count(u.id) as quantidadeDeSelecoes
-from estiloFav e join usuario u on fkEstiloFav = idEstiloFav group by e.nome; 
+from estiloFav e join usuario u on fkEstiloFav = idEstiloFav group by e.nome;
 
--- criptografia desejável
-SELECT aes_encrypt('senhaSegura', 'chaveSegura');
+-- select do login para poder atalizar o cadastro usando o sessionStorage do navegador
+SELECT * FROM usuario JOIN endereco on usuario.id = fkUsuario WHERE email = 'silvio.tavares@sptech.school' AND senha = md5('silvio123');
+
+UPDATE usuario SET nome = 'Silvio', email = 'silvio.tavares@sptech.school', senha = md5('silvio1234'), fkEstiloFav = 1 WHERE id = 1;
+
+UPDATE endereco SET numero = 135, cep = '03924-280' WHERE fkUsuario = 1;

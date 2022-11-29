@@ -68,6 +68,7 @@
                     <option value="6">Terror</option>
                     <option value="7">Plataforma</option>
                     <option value="8">Arcade</option>
+                    <option value="9">Estratégia</option>
                 </select>
             </div>
             <div class="cadastro_botao">
@@ -102,7 +103,7 @@ function verificar_nome() {
 
         if (num_Var == "") {
             document.getElementById("input_num").style.borderColor = "black";
-        } else if (num_eVar.length > 1) {
+        } else if (num_Var >= 1) {
             document.getElementById("input_num").style.borderColor = "green";
         } else {document.getElementById("input_num").style.borderColor = "red";}
     }
