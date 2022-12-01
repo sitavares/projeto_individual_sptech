@@ -188,6 +188,10 @@ html {
     margin-bottom: 50px;
 }
 
+.texto_game{
+    text-align: center;
+}
+
 iframe{
     height: 100%;
     width: 100%;
