@@ -14,7 +14,7 @@
 <body>
     <div class="menu-dashboard">
         <div class="logo-luminar">
-            <img src="./assets/xbox-logo-2.png" alt="Logo Luminar" width="150px" height="55px"/>
+            <img src="./assets/xbox-logo-2.png" alt="Logo Xbox" width="150px" height="55px"/>
         </div>
         <div class="principal-menu">
             <div class="perfil-item-menu">
@@ -55,8 +55,8 @@
                         <input onkeyup="verificar_num()" type="number" id="input_num" placeholder="Número da residência">
                     </div>
                     <div class="input_grupo">
-                        <label for="input_senha">Senha</label>
-                        <input onkeyup="verificar_senha()" type="password" id="input_senha" placeholder="no mínimo 8 caracteres">
+                        <label for="input_senha">Nova Senha</label>
+                        <input onkeyup="verificar_senha()" type="password" id="input_senha" placeholder="No mínimo 8 caracteres">
                     </div>
                 </div>
                 <div class="cadastro_section">
@@ -102,7 +102,7 @@
 
 b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-onload(inserir_input());
+onload(inserir_input(), verificar_nome(), verificar_email(), verificar_num(), verificar_cep());
 
 function verificar_nome() {
         var nomeVar = input_nome.value;

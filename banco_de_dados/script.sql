@@ -32,6 +32,16 @@ cep VARCHAR(9),
 fkUsuario INT, foreign key(fkUsuario)references usuario(id)
 );
 
+INSERT INTO usuario VALUES
+(null, 'João', 'joaosilva@gmail.com', md5('joao1234'), 1),
+(null, 'Vitor', 'vitorsouza@gmail.com', md5('vitor1234'), 2),
+(null, 'Paulo', 'paulo.silva@sptech.school', md5('paulo1234'), 3),
+(null, 'Vivian', 'vivian.silva@sptech.school', md5('vivian1234'), 9),
+(null, 'Enzo', 'enzo.medej@sptech.school', md5('enzo1234'), 1),
+(null, 'Giovanna', 'giovanna.benichel@sptech.school', md5('giovanna1234'), 9);
+
+INSERT INTO endereco VALUES
+()
 
 SELECT * FROM estiloFav;
 SELECT * FROM usuario;
