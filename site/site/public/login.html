@@ -80,14 +80,13 @@
                     sessionStorage.CEP = json.cep;
 
                     setTimeout(function () {
-                        alert(`Derecionando para o dashboard...`)
+                        alert(`Login realizado com sucesso!`)
                         window.location = "./dashboard/dashboard.html";
                     },); // apenas para exibir o loading
 
                 });
 
             } else {
-
                 alert(`Verifique seus dados e tente novamente!`)
                 console.log("Houve um erro ao tentar realizar o login!");
 
@@ -102,9 +101,7 @@
         })
 
         return false;
-        }
-
-        
+        } 
     }
 </script>
 
